@@ -1,5 +1,0 @@
----
-oracle_java8_packages:
-  - oracle-java8-installer
-  - ca-certificates
-  - oracle-java8-set-default
