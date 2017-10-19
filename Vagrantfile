@@ -19,6 +19,7 @@ Vagrant.configure("2") do |config|
         ansible.tags = ['common', 'oracle-java8', 'jenkins', 'maven']
     end
     
+    config.vm.network "private_network", ip: "192.168.107.10"
     config.vm.network "forwarded_port", host: 8080, guest:80, autocorrect: true
     config.vm.network "forwarded_port", host: 8081, guest:8080, autocorrect: true
 end
