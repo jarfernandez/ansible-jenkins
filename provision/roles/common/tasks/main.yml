@@ -1,4 +1,4 @@
 ---
 - name: Instalar paquetes comunes del SO
-  apt: name={{ item }} state=latest update_cache=yes cache_valid_time=3600
+  yum: name={{ item }} state=latest update_cache=yes
   with_items: '{{ common_packages }}'
