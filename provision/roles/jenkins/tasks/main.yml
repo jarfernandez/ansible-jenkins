@@ -1,12 +1,12 @@
 ---
-- name: Instalar clave pública de Jenkins
-  apt_key: url={{ jenkins_public_key_url }} state=present
-  
 - name: Añadir URL de repositorio Jenkins al sistema
-  apt_repository: repo='{{ jenkins_repo_url }}' state=present update_cache=yes
+  get_url: url={{ jenkins_repo_url }} dest=/etc/yum.repos.d/jenkins.repo
+  
+- name: Importar clave pública de RPM de Jenkins
+  rpm_key: key={{ jenkins_public_key_url }} state=present
   
 - name: Instalar Jenkins y sus dependencias
-  apt: name={{ item }} state=latest update_cache=yes cache_valid_time=3600
+  yum: name={{ item }} state=latest update_cache=yes
   with_items: '{{ jenkins_packages }}'
   
 - name: Iniciar servicio Jenkins
