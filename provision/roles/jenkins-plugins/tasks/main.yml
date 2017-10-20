@@ -1,9 +1,14 @@
 ---
+- name: Obtener la contraseña del usuario admin
+  command: cat /var/lib/jenkins/secrets/initialAdminPassword
+  register: data
+
 - name: Instalar plugin Green Balls
   jenkins_plugin:
     name: greenballs
     state: latest
     params: "{{ jenkins_params }}"
+    url_password: "{{ data.stdout }}"
       
 - name: Reiniciar servicio Jenkins
   service: name=jenkins state=restarted

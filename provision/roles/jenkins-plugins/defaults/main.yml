@@ -1,5 +1,4 @@
 ---
 jenkins_params:
   url_username: admin
-  url_password: 4fd92358065c4aebb459736640d1f00a
   url: http://localhost:8080
