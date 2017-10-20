@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
         ansible.playbook = "provision/install.yml"
         ansible.host_key_checking = false
         ansible.sudo = true
-        ansible.tags = ['common', 'java8', 'jenkins', 'maven']
+        ansible.tags = ['common', 'java8', 'jenkins', 'maven', 'jenkins-plugins']
     end
     
     config.vm.network "private_network", ip: "192.168.107.10"

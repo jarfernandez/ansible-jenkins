@@ -1,0 +1,9 @@
+---
+- name: Instalar plugin Green Balls
+  jenkins_plugin:
+    name: greenballs
+    state: latest
+    params: "{{ jenkins_params }}"
+      
+- name: Reiniciar servicio Jenkins
+  service: name=jenkins state=restarted
