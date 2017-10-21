@@ -8,7 +8,7 @@ $ vagrant up
 
 Acceder a Jenkins con un navegador a http://localhost:8080
 
-Para obtener la contraseña del usuario admin de Jenkins, ejecutar el siguiente comando:
+Para obtener la contraseña del usuario `admin` de Jenkins, ejecutar el siguiente comando:
 ```
 $ vagrant ssh -c "sudo cat /var/lib/jenkins/secrets/initialAdminPassword"
 ```
