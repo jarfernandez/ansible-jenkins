@@ -20,7 +20,6 @@ jenkins_plugins:
   - credentials
   - credentials-binding
   - deploy
-  - disk-usage
   - display-url-api
   - docker-commons
   - docker-workflow
@@ -36,7 +35,6 @@ jenkins_plugins:
   - handlebars
   - jackson2-api
   - javadoc
-  - jobConfigHistory
   - jquery
   - jquery-detached
   - jsch
