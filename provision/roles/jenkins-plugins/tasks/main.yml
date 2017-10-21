@@ -3,12 +3,13 @@
   command: cat /var/lib/jenkins/secrets/initialAdminPassword
   register: data
 
-- name: Instalar plugin Green Balls
+- name: Instalar plugins
   jenkins_plugin:
-    name: greenballs
+    name: "{{ item }}"
     state: latest
     params: "{{ jenkins_params }}"
     url_password: "{{ data.stdout }}"
-      
+  with_items: "{{ jenkins_plugins }}"
+
 - name: Reiniciar servicio Jenkins
   service: name=jenkins state=restarted
