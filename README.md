@@ -15,4 +15,4 @@ $ vagrant ssh -c "sudo cat /var/lib/jenkins/secrets/initialAdminPassword"
 
 ---
 
-Tags: ansible, centos, configuration management, devops, jenkins, vagrant, virtualbox
+Tags: ansible, centos, configuration management, devops, jenkins, maven, vagrant, virtualbox
